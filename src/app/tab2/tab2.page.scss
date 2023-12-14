@@ -1,0 +1,21 @@
+.botones-verdes, .botones-rojos, .botonvioleta{
+  font-weight: bolder;
+}
+
+.botonvioleta{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo{
+  font-weight: bolder;
+  text-align: center;
+  color: white;
+  font-size: x-large;
+}
+
+.detallescarrito{
+  font-weight: bold;
+  color: black;
+}

@@ -1,0 +1,25 @@
+#ion-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.titulo{
+    font-weight: bolder;
+    text-align: center;
+    color: white;
+    font-size: x-large;
+  }
+
+  .ioncard-categorias{
+    ion-card-title{
+        font-weight: bolder;
+        color: black;
+    }
+  }
+
+  .subtitulo{
+    font-weight: bolder;
+    font-size: larger;
+    color: black;
+  }

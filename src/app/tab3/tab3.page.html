@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="titulo">
+      Turnos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title>Turnos</ion-title>
+    </ion-toolbar>
+    
+  </ion-header>
+
+  <h2>RELLENÁ CON TUS DATOS EL FORMULARIO</h2>
+
+  <form #formulario="ngForm">
+    <div class="cajitatexto">
+      <label for="nombre">Nombre y apellido</label>
+      <input type="text" name="nombre" id="nombre" placeholder="Nombre y apellido" [(ngModel)]="datosService.datos.nombre" #nombre="ngModel" required minlength="5">
+      <p class="error" *ngIf="nombre.invalid && nombre.touched">Ingrese un nombre válido</p>
+    </div>
+
+    <div class="cajitatexto">
+      <label for="numero">Numero de celular</label>
+      <input type="text" name="numero" id="numero" placeholder="ejemplo: 3413108624" [(ngModel)]="datosService.datos.telefono" #telefono="ngModel" required minlength="5">
+      <p class="error" *ngIf="telefono.invalid && telefono.touched">Ingrese un numero válido</p>
+    </div>
+
+    <div class="cajitatexto">
+      <label for="domicilio">Domicilio</label>
+      <input type="text" name="domicilio" id="domicilio" placeholder="Ingrese su domicilio" [(ngModel)]="datosService.datos.domicilio" #domicilio="ngModel" required minlength="8">
+      <p class="error" *ngIf="domicilio.invalid && domicilio.touched">Ingrese un domicilio válido</p>
+    </div>
+
+    <div class="cajitatexto">
+      <label for="mascota">¿Qué mascota tiene?</label>
+      <input type="text" name="mascota" id="mascota" placeholder="ejemplo: Perro, Gato, Conejo" [(ngModel)]="datosService.datos.mascota" #mascota="ngModel" required minlength="3">
+      <p class="error" *ngIf="mascota.invalid && mascota.touched">Ingrese un domicilio válido</p>
+    </div>
+
+    <div class="cajitatexto">
+      <label for="fechaEquipo">Ingrese la fecha para ver al veterinario</label>
+      <input type="date" name="fechaTurno" id="fechaTurno" [(ngModel)]="datosService.datos.fechaTurno" #fecha="ngModel" required>
+      <p class="error" *ngIf="fecha.invalid && fecha.touched">Ingrese una fecha válida</p>  
+    </div>
+
+    <ion-button expand="block" shape="round" color="success" id="boton-reserva" [disabled]="formulario.invalid" href="{{datosService.generarMensaje()}}">¡¡Reservá tu turno AHORA!!
+      <ion-icon slot="start" name="call"></ion-icon>
+      <ion-icon slot="end" name="call"></ion-icon>
+    </ion-button>
+  </form>
+ 
+  

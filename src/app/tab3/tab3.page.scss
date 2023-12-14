@@ -1,0 +1,54 @@
+.titulo{
+    font-weight: bolder;
+    text-align: center;
+    color: white;
+    font-size: x-large;
+}
+
+h2{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    background-color: white;
+  border-radius: 5rem;
+    
+}
+
+
+#boton-reserva{
+    margin-top: 10px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    cursor: pointer;
+    color: white;
+    
+}
+
+form, form div{
+    display: flex;
+    flex-direction: column;
+    margin: 0.625rem;
+}
+
+form{
+    gap: 0.4rem;
+    font-size: large;
+}
+
+.error{
+    color: red;
+}
+
+.cajitatexto{
+    label{
+        font-weight: bolder;
+    }
+    input{
+        margin-top: 0.4rem;
+        background-color: white;
+        padding: 0.5rem;
+        border-radius: 10rem;
+        border: none;
+    }
+}

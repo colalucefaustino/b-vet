@@ -1,0 +1,30 @@
+.botones-verdes, .botones-rojos{
+    font-weight: bolder;
+  }
+
+  .botonesproductos{
+    margin-left: 0.625rem;
+    display: flex;
+    flex-direction: row;
+    #agregaralcarro{
+        margin-left: 1.8rem;
+    }
+  }
+
+  .contenido {
+    text-align: justify;
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+    font-weight: bold;
+  }
+
+  .titulo{
+    font-weight: bolder;
+    text-align: center;
+    color: white;
+    font-size: x-large;
+  }
+
+  .btnsiniciocarrito{
+    margin-top: 1.25rem;
+  }

@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="titulo">
+      Carrito
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Carrito</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card *ngIf="carritoService.carrito.length">
+    <ion-card-header>
+      <ion-card-title class="detallescarrito">Productos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let item of carritoService.carrito">
+          <ion-thumbnail slot="start">
+            <img alt="{{item.producto.nombre}}" src="{{item.producto.imagen}}" />
+          </ion-thumbnail>
+          <ion-button fill="clear" (click)="carritoService.eliminarProducto(item.producto.id)">
+            <ion-icon slot="icon-only" name="trash-outline" color="danger"></ion-icon>
+          </ion-button>
+          <ion-card-title class="detallescarrito">
+            Total: ${{carritoService.totalCarrito}}
+          </ion-card-title>
+          <app-contador-cantidad [cantidadInicial]="item.cantidad" (cantidadCambiada)="cambiarCantidad($event, item.producto.id)"></app-contador-cantidad>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title *ngIf="!carritoService.carrito.length">
+        <p class="detallescarrito">Carrito vacío. </p>
+        <ion-button  class="botonvioleta" shape="round" color="tertiary" size="small" fill="solid" [routerLink]="['/tabs/tab1']"> Volver al inicio 
+          <ion-icon slot="start" name="paw"></ion-icon>
+          <ion-icon slot="end" name="paw"></ion-icon>
+        </ion-button>
+      </ion-card-title>
+      <ng-container *ngIf="carritoService.carrito.length">
+      <ion-card-title class="detallescarrito">
+        Total: ${{carritoService.totalCarrito}}
+      </ion-card-title>
+      <ion-button class="botones-verdes" shape="round" fill="solid" color="success" href="{{carritoService.generarMensaje()}}" target="_blank">Realizar pedido</ion-button>
+      <ion-button class="botones-rojos" shape="round" fill="solid" color="danger" (click)="carritoService.limpiarCarrito()">Borrar carrito</ion-button>
+    </ng-container>
+</ion-card-content>
+</ion-card>
+</ion-content>
